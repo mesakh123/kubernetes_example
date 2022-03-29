@@ -1,0 +1,31 @@
+# kind  | version
+# service v1
+# pod v1
+# replicaset apps/v1
+# deploymenet apps/v1
+
+apiVersion: apps/v1
+kind: Deployment
+metadata: # must have name and labels
+  name: myapp-deployment
+  labels: #dictionary
+    app: myapp
+    type: server
+
+spec:
+  template:
+    metadata: # must have name and labels
+      name: myapp-pod
+      labels: #dictionary
+        app: myapp
+        type: server
+
+    spec:
+      containers: # List dict
+        - name: nginx-container
+          image: nginx
+
+  replicas: 3
+  selector:
+    matchLabels:
+      type: server
