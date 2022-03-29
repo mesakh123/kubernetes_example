@@ -1,34 +1,35 @@
+# Step
 1. install kubectl
 2. install minikube
-3. minikube start --driver=virtualbox
+3. `minikube start --driver=virtualbox`
 4. check minikube status (command : minikube status)
-5. minikube dashboard --url
-   start example: kubectl create deployment hello-node --image=k8s.gcr.io/echoserver:1.4
+5. `minikube dashboard --url`
+   start example: `kubectl create deployment hello-node --image=k8s.gcr.io/echoserver:1.4`
 6. expose as a service:
-   kubectl expose deployment hello-node --type=NodePort --port=8080
-   minikube service hello-node --url
+   `kubectl expose deployment hello-node --type=NodePort --port=8080`
+   `minikube service hello-node --url`
 7. delete:
-   kubectl delete deployment hello-node
-   kubectl delete service hello-node
+   `kubectl delete deployment hello-node`
+   `kubectl delete service hello-node`
 
-start with file
-kubectl create -f <filename>
+# start with file
+`kubectl create -f <filename>`
 
-kubectl get replicationcontroller
+`kubectl get replicationcontroller`
 
-kubectl get replicaset
+`kubectl get replicaset`
 
 # update edited replica definition
 
-kubectl replace -f replicaset-definition.yaml
+`kubectl replace -f replicaset-definition.yaml`
 
 # provide new number of replica
 
-kubectl scale --replicas=6 -f replicaset-definition.yaml
+`kubectl scale --replicas=6 -f replicaset-definition.yaml`
 
-# alternative
+## alternative
 
-kubectl scale --replicas=6 replicaset <replicaset_name>
+`kubectl scale --replicas=6 replicaset <replicaset_name>`
 
 deployment :
 
