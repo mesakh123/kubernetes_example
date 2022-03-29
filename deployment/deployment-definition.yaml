@@ -27,5 +27,7 @@ spec:
 
   replicas: 3
   selector:
+    # define how the deploymoent finds which pod to manage
+    # by using matchLabels
     matchLabels:
       type: server

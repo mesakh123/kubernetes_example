@@ -47,3 +47,23 @@ kubectl rollout undo deployment/hello-node
 
 update deployment
 kubectl set image deployment/deployment_name image_name=image_nameversion
+
+
+# Kubernetes Networking
+i.e. :node ip 192.168.1.2 
+- kubernetes create internal private network, then pod attached to the network
+- need to modify networking by ourself to connect between pod
+
+# Kubernetes Service
+
+## command
+`kubectl get services`
+## types
+- nodeport : portforwarding a pod port to node port
+- clusterip : create virtual ip inside the cluster to enable connection between services (node)
+- load balancer
+
+## Nodeport
+1. targetport: current running port of application
+2. port : service object port attached to targetport (running application)
+3. nodeport: port for extrenal access (30000-32767)
